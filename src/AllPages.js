@@ -34,6 +34,7 @@ const AllPages = ({books}) => {
   return (
     <PageContainer>
  {<TotalFoundBooks> Found {filtered.length} results</TotalFoundBooks>}
+ 
  {!showBooks ?<TotalFoundBooks>Found results by category {newItems.length} </TotalFoundBooks>:''}
 {isLoading?<Spinner/>: <Books>
 {showBooks &&

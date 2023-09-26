@@ -1,5 +1,5 @@
 {
-  "homepage": "git remote add origin https://github.com/burulaiplanet/googleBooks.git",
+  "homepage": "https://github.com/burulaiplanet/googleBooks.git",
   "name": "googlebooks",
   "version": "0.1.0",
   "private": true,
