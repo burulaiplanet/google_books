@@ -12,7 +12,7 @@ const AllPages = ({books}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { newItems } = useSelector((state) => state.categorySlice);
-  const { items,isLoading } = useSelector((state) => state?.searchBooks);
+  const { items,isLoading,totalItems } = useSelector((state) => state?.searchBooks);
   console.log(items);
   const {newSortBook}=useSelector((state)=>state.sortBooks)
   const { showBooks } = useSelector((state) => state.uiSlice);
@@ -33,7 +33,7 @@ const AllPages = ({books}) => {
   console.log(filtered);
   return (
     <PageContainer>
- {<TotalFoundBooks> Found {filtered.length} results</TotalFoundBooks>}
+ {<TotalFoundBooks> Found {totalItems} results</TotalFoundBooks>}
  
  {!showBooks ?<TotalFoundBooks>Found results by category {newItems.length} </TotalFoundBooks>:''}
 {isLoading?<Spinner/>: <Books>
