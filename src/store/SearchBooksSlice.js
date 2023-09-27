@@ -8,6 +8,7 @@ const initialState = {
   items: [],
   isLoading: false,
   hasError: false,
+  totalItems:0
 };
 
 const searchBooksSlice = createSlice({
@@ -20,7 +21,8 @@ const searchBooksSlice = createSlice({
     },
     [getBooksActions.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.items = action.payload
+      state.items = action.payload.items
+      state.totalItems=action.payload.totalItems
     },
     [getBooksActions.rejected]: (state, action) => {
       state.isLoading = false;
@@ -33,10 +35,11 @@ const searchBooksSlice = createSlice({
     },
     [loadMoreBooksActions.fulfilled]: (state, action) => {
       state.isLoading = false;
-      action.payload.forEach((element) => {
+      action.payload.items.forEach((element) => {
         const prev = state.items.find((el) => el.id === element.id);
         if (!prev) {
           state.items.push(element);
+          
         }
       });
     },

@@ -11,7 +11,7 @@ export const getBooksActions = createAsyncThunk(
           "&key=AIzaSyAKK60d5iNA-7fbo7DtCIPDUcjOt6GoFxE" +
           "&maxResults=30"
       );
-      return response.data.items;
+      return response.data;
     } catch (error) {
       throw new Error(error.message);
     }
@@ -29,7 +29,7 @@ export const loadMoreBooksActions = createAsyncThunk(
           "&key=AIzaSyDa19QCvpr8CcKZj1Myh6Q92oQJ4GGY2rY" +
           "&maxResults=30"
       );
-      return response.data.items;
+      return response.data;
     } catch (error) {
       throw new Error(error.message);
     }
